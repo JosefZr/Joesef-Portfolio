@@ -1,0 +1,95 @@
+.menu {
+  height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: white;
+  z-index: 3;
+
+  /* Desktop default: side panel */
+  width: min(520px, 90vw);
+
+  .body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 56px;
+    gap: 12px;
+    margin-top: 80px;
+  }
+
+  .header {
+    color: rgb(153, 153, 153);
+    border-bottom: 1px solid rgb(153, 153, 153);
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  .menu {
+    width: min(420px, 92vw);
+
+    .body {
+      padding: 64px 48px;
+    }
+
+    .nav {
+      font-size: 44px;
+      margin-top: 48px;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .menu {
+    left: 0;   /* full overlay */
+    right: 0;
+    width: 100vw;
+
+    .body {
+      padding: 28px 40px;
+    }
+
+    .nav {
+      font-size: clamp(28px, 7vw, 36px);
+      gap: 10px;
+      margin-top: 24px;
+      font-size: 20px;
+    }
+
+    .header {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width: 360px) {
+  .menu {
+    .body {
+      padding: 22px 32px;
+      gap: 10px;
+    }
+  }
+}

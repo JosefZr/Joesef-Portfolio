@@ -1,0 +1,17 @@
+{
+    auto_https off
+}
+www.lbbenyahia.com {
+    redir https://lbbenyahia.com{uri}
+}
+
+lbbenyahia.com {
+    tls /etc/caddy/certs/fullchain.pem /etc/caddy/certs/privkey.pem
+    root * /srv
+
+    # --- SPA fallback only for other routes ---
+    handle @notAPI {
+        try_files {path} /index.html
+        file_server
+    }
+}
